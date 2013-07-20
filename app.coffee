@@ -4,16 +4,15 @@ Module dependencies
 express = require("express")
 http = require("http")
 path = require("path")
+db = require("./models")
 
 routes = require("./routes")
-api = require("./routes/api")
 
 app = module.exports = express()
 
 ###
 Configuration
 ###
-
 # all environments
 app.set "port", process.env.PORT or 3000
 app.set "views", __dirname + "/views"
@@ -29,28 +28,19 @@ app.use app.router
 if app.get("env") == "development"
   app.use express.errorHandler()
 
-# production only
-app.get("env") == "production"
-
-# TODO
-
 ###
 Routes
 ###
-
 # serve index and view partials
-app.get "/", routes.index
-app.get "/partials/:name", routes.partials
-
-# JSON API
-app.get "/api/name", api.name
-
-# redirect all others to the index (HTML5 history)
-app.get "*", routes.index
+app.get("/", routes.index)
 
 ###
-Start Server
+Run pending migrations and start server
 ###
-http.createServer(app).listen app.get("port"), ->
-  console.log "Express server listening on port " + app.get("port")
+db.sequelize.sync().complete (err) ->
+  if err
+    throw err
+  else
+    http.createServer(app).listen app.get("port"), ->
+      console.log "Express server listening on port " + app.get("port")
 
