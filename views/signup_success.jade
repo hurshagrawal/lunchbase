@@ -1,0 +1,21 @@
+extends layout
+
+block body
+  div
+    h2 Awesome! You're all signed up.
+
+    p Invite the rest of your company.
+
+    form(action="/invite", method="post")
+      div
+        label Your company's team email address.
+        input(name="emails", placeholder="all@company.com", type="text")
+      div
+        input(name="subject", type="text", value="Want to grab lunch with some other companies?")
+      div
+        textarea(name="body")
+          | Hey guys,
+
+          | I just signed up for this thing called Lunchbase which sets up team lunches with other companies around us. If you're interested in coming along, click this link:
+        p We'll add a link to the signup form for you.
+      input(type="submit", value="Go!")

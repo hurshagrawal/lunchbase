@@ -17,6 +17,7 @@ Configuration
 app.set "port", process.env.PORT or 3000
 app.set "views", __dirname + "/views"
 app.set "view engine", "jade"
+app.use express.cookieParser('811f9b3e237c5ea06d650b3da716ec3f')
 app.use express.logger("dev")
 app.use express.bodyParser()
 app.use express.methodOverride()
@@ -33,7 +34,11 @@ Routes
 ###
 # serve index and view partials
 app.get("/", routes.index)
-app.get("/users", routes.createUser)
+app.get("/success", routes.signupSuccess)
+app.get("/invites-sent", routes.invitesSent)
+
+app.post("/users", routes.createUser)
+app.post("/invite", routes.inviteUsers)
 
 ###
 Run pending migrations and start server
