@@ -34,6 +34,7 @@ Routes
 ###
 # serve index and view partials
 app.get("/", routes.index)
+app.get("/signup", routes.signup)
 app.get("/success", routes.signupSuccess)
 app.get("/invites-sent", routes.invitesSent)
 
