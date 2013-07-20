@@ -1,18 +1,43 @@
 extends layout
 
 block body
-  div
-    h2 Hello {{name}}
-    ul.menu
-      li
-        a(href='view1') view1
-      li
-        a(href='view2') view2
+  div.wrapper.new-section
+    header lunchbase
+    h1 lunch with good company
+    ul.menu.cf
+      li.invite
+        h2 invite
+        div.separator
+        div.img
+        p Invite your company to join. <br /> The more the merrier.
+      li.pair
+        h2 pair
+        div.separator
+        div.img
+        p We match you with other companies and people. Then distribute everyone into lunch sized groups.
+      li.meet-eat
+        h2 meet &amp; eat
+        div.separator
+        div.img
+        p Pick from our reccomended places to meet, or choose your own, and Bon Appetit!
+    //- div.signup
+    //-     a(href='signup') sign up your company (or just yourself)
 
-    div(ng-view)
+  div.ending.new-section
+    div.napkin
+    div.napkin
+    svg.fork
+      path(fill="white", d="M5.312,150.154c0,0,2.108-59.779,2.744-79.435c0,0,0.62-8.511-5.253-11.561c0,0-3.639-3.446-2.623-9.323  L2.476,1.811c0,0,0.768-0.469,1.708,0.124l0.497,39.823c0,0,1.188,0.791,2.503-0.129l0.58-39.791c0,0,0.66-0.526,1.451,0.003  l0.997,39.396c0,0,0.792,1.847,2.902,0.268l0.978-39.788c0,0,0.526-0.265,1.446,0.001l0.344,39.924c0,0,1.181,1.581,2.894-0.129  l0.587-39.657c0,0,0.395-0.658,1.186,0.131l2.306,45.985c0,0,0.648,9.224-4.762,13.303c0,0-3.168,4.298-2.515,9.569l-1.144,78.167  c0,0,0.074,5.932-4.317,5.809C5.234,154.683,5.312,150.154,5.312,150.154z")
+    svg.knife-spoon
+      path(fill="white", d="M14.294,102.466c0,0,0.984-10.287,0.662-18.097l2.917-82.836c0,0-2.546-4.495-7.939,1.907  c0,0-5.186,3.758-9.007,45.999c0,0-4.283,40.302,5.559,51.726L3.88,172.088c0,0,0.978,4.879,6.178,4.556  c5.207-0.326,5.207-5.531,5.207-5.531L14.294,102.466z")
+      path(fill="white", d="M41.01,84.67c0,0-13.061-8.439-7.443-28.46c0,0,5.915-20.618,15.256-20.922  c9.341-0.307,16.029,20.002,16.481,25.785c0.449,5.783,2.084,13.046-7.541,23.288c0,0-6.967,4.453-5.322,15.276l2.139,71.913  c0,0-0.738,2.077-4.148,2.969c-3.411,0.895-3.709-3.999-3.709-3.999l-1.404-72.508C45.318,98.012,45.756,87.635,41.01,84.67z")
 
-    div
-      | Angular seed app: v
-      span(app-version)
+    div.plate
+      div.center
 
-  != js('app')
+
+  footer.new-section
+      p made with 
+        span &hearts;
+        |  in nyc
+

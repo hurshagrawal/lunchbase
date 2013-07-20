@@ -1,0 +1,22 @@
+/* app css stylesheet */
+
+@import "bourbon";
+@import "normalize";
+@import "clearfix";
+@import "colors";
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800);
+@import url(http://fonts.googleapis.com/css?family=Stalemate);
+@import "home";
+
+body {
+	font-weight: 400;
+	color: $black;
+	font: 62.5%/1.5 'Open Sans', sans-serif;
+
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+}
