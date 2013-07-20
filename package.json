@@ -10,6 +10,7 @@
     "jade": "~0.31.2",
     "pg": "~2.2.0",
     "coffee-script": "~1.6.3",
-    "sequelize": "~2.0.0-alpha2"
+    "sequelize": "~2.0.0-alpha2",
+    "node-mailgun": "0.0.2"
   }
 }

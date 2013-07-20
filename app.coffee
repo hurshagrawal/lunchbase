@@ -33,6 +33,7 @@ Routes
 ###
 # serve index and view partials
 app.get("/", routes.index)
+app.get("/users", routes.createUser)
 
 ###
 Run pending migrations and start server
