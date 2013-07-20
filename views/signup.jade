@@ -1,0 +1,19 @@
+extends layout
+
+block body
+  div
+    h2 Hello guy, signup!
+    form(action="/users", method="post")
+      div
+        label Name
+        input(name="user[name]", placeholder="Jim Bob", type="text")
+      div
+        label Email
+        input(name="user[email]", placeholder="jim@example.com", type="text")
+      div
+        label Company Name
+        input(name="company[name]", placeholder="Jim Bob", type="text")
+      div
+        label Company Address
+        input(name="company[address]", placeholder="142 East 42nd St", type="text")
+      input(type="submit", value="Go!")
